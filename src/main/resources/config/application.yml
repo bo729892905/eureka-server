@@ -1,0 +1,25 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    # Default values in org.springframework.cloud.netflix.eureka.EurekaInstanceConfigBean
+    preferIpAddress: true
+    instanceId: ${spring.cloud.client.hostname}:${server.port}
+  client:
+    # Default values in org.springframework.cloud.netflix.eureka.EurekaClientConfigBean
+    registerWithEureka: true
+    fetchRegistry: true
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+  server:
+    # Default values in org.springframework.cloud.netflix.eureka.server.EurekaServerConfigBean
+    waitTimeInMsWhenSyncEmpty: 30000
+    renewalPercentThreshold: 0.49
+    renewalThresholdUpdateIntervalMs: 60000
+
+logging:
+  level:
+    root: INFO
