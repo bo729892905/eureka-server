@@ -4,6 +4,7 @@ buildscript {
         springCloudVersion = "Brixton.M4"
     }
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url "http://repo.spring.io/libs-snapshot" }
         mavenCentral()
     }
@@ -25,6 +26,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     maven { url "http://repo.spring.io/libs-snapshot" }
     mavenCentral()
 }
@@ -36,6 +38,7 @@ dependencyManagement {
 }
 
 dependencies {
+    compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.cloud:spring-cloud-starter-eureka-server"
 }
 

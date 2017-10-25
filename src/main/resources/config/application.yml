@@ -6,14 +6,15 @@ eureka:
     # Default values in org.springframework.cloud.netflix.eureka.EurekaInstanceConfigBean
     preferIpAddress: true
     instanceId: ${spring.cloud.client.hostname}:${server.port}
+    hostname: localhost
   client:
     # Default values in org.springframework.cloud.netflix.eureka.EurekaClientConfigBean
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: false #单节点服务注册中心无需注册或检索服务
+    fetchRegistry: false #单节点服务注册中心无需注册或检索服务
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://localhost:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     # Default values in org.springframework.cloud.netflix.eureka.server.EurekaServerConfigBean
     waitTimeInMsWhenSyncEmpty: 30000
