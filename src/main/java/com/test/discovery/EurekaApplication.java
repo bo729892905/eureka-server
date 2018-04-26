@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
 @EnableEurekaServer
-@EnableEurekaClient
+@EnableEurekaClient//集群时作为客户端注册到其他的Eureka节点上
 public class EurekaApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
